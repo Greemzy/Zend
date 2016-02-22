@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">
+			Users
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'create')); ?>"><button class="btn btn-primary" type="button" ><i class="fa fa-plus-square"></i>Create</button></a>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Active</th>
+			<th>Actions</th>
+		</tr>
+		<?php foreach ($rowset as $row) : ?>
+			<tr>
+				<td><?php  echo $this->escapeHtml($row->getUsrId()) ?></td>
+				<td><?php  echo $this->escapeHtml($row->getUsrName()) ?></td>
+				<td><?php  echo $this->escapeHtml($row->getUsrEmail()) ?></td>
+				<td>
+					<?php
+					if($row->getUsrActive())
+					{
+						echo "true";
+					}
+					else
+					{
+						echo "false";
+					}
+					?>
+				</td>
+				<td><a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'update', 'id' => $row->getUsrId())); ?>"><button class="btn btn-primary" type="button" ><i class="fa fa-edit"></i>Edit</button></a>
+					<a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'delete', 'id' => $row->getUsrId()));?>" onclick="return confirm('Do you rely want to delete the record;')"><button class="btn btn-danger" type="button"><i class="fa fa-trash"></i>Delete</button></a></td>
+			</tr>
+		<?php endforeach; ?>
+
+	</table>
+	</div>
+</div>
+

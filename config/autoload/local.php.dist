@@ -1,0 +1,31 @@
+<?php
+return array(
+    // ...
+    'doctrine' => array(
+        'connection' => array(
+            'orm_default' => array(
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
+                'params' => array(
+                    'host'     => 'mysql7.000webhost.com',
+                    'port'     => '3306',
+                    'user'     => 'a7950070_user',
+                    'password' => 'azerty76',
+                    'dbname'   => 'a7950070_zf2',
+                    'charset'  => 'utf8',
+                )
+            )
+        )
+    ),
+    'db' => array(
+        'driver'    => 'PdoMysql',
+        'hostname'  => 'mysql7.000webhost.com',
+        'database'  => 'a7950070_zf2',
+        'username'  => 'a7950070_user',
+        'password'  => 'azerty76',
+    ),
+    'service_manager' => array(
+        'factories' => array(
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+        ),
+    ),
+);

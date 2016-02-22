@@ -1,0 +1,94 @@
+<?php $user = $this->identity();$name = ""; if(!is_null($user)) { $name = $user->getUsrname(); } ?>
+<h1>Bienvenue <?php echo $name; ?>
+</h1>
+
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-user-plus fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge"></div>
+                        <div>Users</div>
+                    </div>
+                </div>
+            </div>
+            <a href="<?php echo $this->url('admin/default', array('controller' => 'user', 'action' => 'index')); ?>">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-newspaper-o fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge"></div>
+                        <div>Articles</div>
+                    </div>
+                </div>
+            </div>
+            <a href="<?php echo $this->url('admin/default', array('controller' => 'article', 'action' => 'index')); ?>">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+
+                        <div>Comments</div>
+                    </div>
+                </div>
+            </div>
+            <a href="<?php echo $this->url('admin/default', array('controller' => 'comment', 'action' => 'index')); ?>">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-exclamation-triangle fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+
+                        <div>Logs</div>
+                    </div>
+                </div>
+            </div>
+            <a href="<?php echo $this->url('admin/default', array('controller' => 'log', 'action' => 'index')); ?>">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

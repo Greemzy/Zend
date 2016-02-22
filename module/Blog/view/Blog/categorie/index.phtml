@@ -1,0 +1,29 @@
+<div class="row">
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-12">
+
+        <h1 class="page-header">
+            Penetra Blog
+            <small></small>
+        </h1>
+
+        <div class="row">
+            <?php foreach ($articles as $article) : ?>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="thumbnail">
+                        <img src="<?php echo $article->getThumb() ?>" alt="img">
+                        <div class="caption">
+                            <h3><?php echo $article->getStar() ?></h3>
+                            <p><?php echo $article->getIntroduction() ?></p>
+                            <p class="text-right"><a href="<?php echo $this->url('articleSlug', array('category' => $this->customTools($article->getCategorie()), 'name' => $this->customTools($article->getSlug()))); ?>"  role="button">Read</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+
+
+</div>
